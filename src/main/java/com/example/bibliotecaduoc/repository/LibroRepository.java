@@ -1,19 +1,20 @@
 package com.example.bibliotecaduoc.repository;
 
-import lombok.AllArgsConstructor;
-import lombok.Data;
-import lombok.NoArgsConstructor;
+import com.example.bibliotecaduoc.model.Libro;
+import org.springframework.stereotype.Repository;
 
+import java.util.ArrayList;
+import java.util.List;
 
-@Data
-@AllArgsConstructor
-@NoArgsConstructor
+@Repository
 public class LibroRepository {
-    private int id;
-    private String isbn;
-    private String titulo;
-    private String editorial;
-    private int fechaPublicacion;
-    private String autor;
+    
+    //Arreglo que guardara todos los libros
+    private List<Libro> listaLibros = new ArrayList<>();
+
+    //Metodo que retorna todos los libros
+    public List<Libro> obtenerLibros(){
+        return listaLibros;        
+    }
 
 }
