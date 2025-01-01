@@ -17,4 +17,14 @@ public class LibroRepository {
         return listaLibros;        
     }
 
+    //Buscar un libro por su ID
+    public Libro buscaLibroPorId(int id){
+        for(Libro libro: listaLibros){
+            if(libro.getId() == id){
+                return libro;
+            }
+        }
+        return null;
+    }
+
 }
