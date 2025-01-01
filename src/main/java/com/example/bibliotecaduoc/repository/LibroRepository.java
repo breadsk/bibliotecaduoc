@@ -27,4 +27,14 @@ public class LibroRepository {
         return null;
     }
 
+    //Buscar un libro por su isbn
+    public Libro buscarPorIsbn(String isbn){
+        for(Libro libro : listaLibros){
+            if(libro.getIsbn().equals(isbn)){
+                return libro;
+            }
+        }
+        return null;
+    }
+
 }
