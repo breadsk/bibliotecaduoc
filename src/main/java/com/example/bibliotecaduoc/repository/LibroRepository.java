@@ -68,4 +68,27 @@ public class LibroRepository {
         return libro1;
     }
 
+    //Metodo que elimina el libro mediante su Id
+    //Los 3 métodos son utilizados para eliminar un ítem en un arreglo.
+    public void eliminar(int id){
+        //Alternativa 1
+        Libro libro = buscaLibroPorId(id);
+        if (libro != null) {
+            listaLibros.remove(libro);
+        }
+        //Alternativa 2
+        int idPosicion = 0;
+        for(int i = 0;i<listaLibros.size();i++){
+            if (listaLibros.get(i).getId() == id) {
+                idPosicion = i;
+                break;//Con esto salgo inmediatamente del bucle
+            }
+        }
+        if (idPosicion > 0) {
+            listaLibros.remove(idPosicion);
+        }
+        // Otra alternativa
+        listaLibros.removeIf(x -> x.getId() == id);
+    }
+
 }
