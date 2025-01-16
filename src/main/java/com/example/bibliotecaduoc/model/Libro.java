@@ -5,7 +5,15 @@ import lombok.Data;
 import lombok.NoArgsConstructor;
 
 
-@Data
+@Data //Es una combinación de varias anotaciones de Lombok
+//Genera automaticamente los siguientes métodos para la clase:
+/**
+ * @Getter
+ * @Setter
+ * @ToString
+ * @EqualsAndHashCode Genera métodos equals y hasjCode que compara los campos
+ * @RequiredArgsConstructor Genera un constructor con los campos finales (final) y los campos marcados con @NonNull
+ */
 @AllArgsConstructor
 @NoArgsConstructor
 public class Libro {
