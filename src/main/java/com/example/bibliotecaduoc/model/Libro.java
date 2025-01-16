@@ -14,8 +14,8 @@ import lombok.NoArgsConstructor;
  * @EqualsAndHashCode Genera métodos equals y hasjCode que compara los campos
  * @RequiredArgsConstructor Genera un constructor con los campos finales (final) y los campos marcados con @NonNull
  */
-@AllArgsConstructor
-@NoArgsConstructor
+@AllArgsConstructor //Genera automatica un constructor que incluye todos los campos de la clase como parametros
+@NoArgsConstructor //Genera un constructor vacío , sin argumentos 
 public class Libro {
 
     private int id;

@@ -6,7 +6,9 @@ import org.springframework.stereotype.Repository;
 import java.util.ArrayList;
 import java.util.List;
 
-@Repository
+@Repository //Especialización de la anotación @Component
+//Se usa para anotar clases que acceden a la base de datos, encapsulan el
+//Almacenamiento, recuperación y búsqueda de objetos de dominio.
 public class LibroRepository {
     
     //Arreglo que guardara todos los libros
