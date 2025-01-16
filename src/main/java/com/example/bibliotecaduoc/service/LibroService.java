@@ -23,6 +23,10 @@ public class LibroService {
         return libroRepository.buscaLibroPorId(id);
     }
 
+    public Libro getLibroIsbn(String isbn){
+        return libroRepository.buscarPorIsbn(isbn);
+    }
+
     public Libro updateLibro(Libro libro){
         return libroRepository.actualizar(libro);
     }
@@ -30,5 +34,13 @@ public class LibroService {
     public String deleLibro(int id){
         libroRepository.eliminar(id);
         return "Producto Eliminado";
+    }
+
+    public int totalLibrosV1(){
+        return libroRepository.obtenerLibros().size();
+    }
+
+    public int totalLibrosV2(){
+        return libroRepository.totalLibros();
     }
 }

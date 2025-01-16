@@ -38,6 +38,12 @@ public class LibroController {
         return libroService.getLibroId(id);
     }
 
+    @GetMapping("/isbn/{isbn}")
+    public Libro buscarLibroIsbn(@PathVariable String isbn) {
+        return libroService.getLibroIsbn(isbn);
+    }
+    
+
     @PutMapping("{id}")
     public Libro actualizarLibro(@PathVariable int id, @RequestBody Libro libro) {        
         //El id lo usaremos mas adelante
@@ -48,4 +54,10 @@ public class LibroController {
     public String eliminarLibro(@PathVariable int id){
         return libroService.deleLibro(id);
     }
+
+    @GetMapping("/total")
+    public int totalLibrosV2() {
+        return libroService.totalLibrosV2();
+    }
+    
 }
