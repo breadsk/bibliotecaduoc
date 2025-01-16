@@ -11,7 +11,7 @@ public class LibroService {
     @Autowired
     private LibroRepository libroRepository;
 
-    public List<Libro> getLibro(){
+    public List<Libro> getLibros(){
         return libroRepository.obtenerLibros();
     }
 
