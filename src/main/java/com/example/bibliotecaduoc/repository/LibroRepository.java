@@ -39,6 +39,17 @@ public class LibroRepository {
         return null;
     }
 
+    //Buscar por Autor
+    public Libro buscarPorAutor(String autor){
+
+        for(Libro libro : listaLibros){
+            if(libro.getAutor().equals(autor)){
+                return libro;
+            }
+        }
+        return null;
+    }
+
 
     //Guardar Libro
     public Libro guardar(Libro lib){
@@ -90,7 +101,7 @@ public class LibroRepository {
             listaLibros.remove(idPosicion);
         }
         // Otra alternativa
-        listaLibros.removeIf(x -> x.getId() == id);
+        listaLibros.removeIf((x) -> x.getId() == id);
     }
 
     public int totalLibros(){
