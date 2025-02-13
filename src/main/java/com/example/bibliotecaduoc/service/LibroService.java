@@ -82,4 +82,55 @@ public class LibroService {
         return libroRepository.buscarPorAutor(autor);
     }
 
+    public Libro getLibroMasAntiguo(){
+
+        List<Libro> libros = libroRepository.obtenerLibros();
+
+        if(libros.isEmpty()){
+            return null; //Si no hay libros retornamos nulo
+        }
+
+        Libro libroMasAntiguo = libros.get(0);
+
+        for(Libro libro : libros){
+            if(libro.getFechaPublicacion() < libroMasAntiguo.getFechaPublicacion()){
+                libroMasAntiguo = libro; //Actualizamos el libro mas antiguo
+            }
+        }
+
+        return libroMasAntiguo;
+
+    }
+
+    public Libro getLibroMasNuevo(){
+        List<Libro> libros = libroRepository.obtenerLibros();
+
+        if(libros.isEmpty()){
+            return null;
+        }
+
+        Libro libroMasNuevo = libros.get(0);
+
+        for(Libro libro : libros){
+            if(libro.getFechaPublicacion() > libroMasNuevo.getFechaPublicacion()){
+                libroMasNuevo = libro;//
+            }
+        }
+
+        return libroMasNuevo;
+
+    }
+
+    public List<Libro> listarLibrosOrdenadosPorAnio(){
+
+        return libroRepository.obtenerLibros()
+                    .stream()//Convierte la lista de libros en un stream , que permite operaciones funcionales como filter, map, sorted etc.
+                    .sorted((libro1,libro2) -> Integer.compare(libro1.getFechaPublicacion(),libro2.getFechaPublicacion()))//Ordena los elementos del stream
+                    //En este caso se usa una expresion lambda para comparar las fechasde publicacion de los libros.
+                    .toList();//Convierte el stream ordenadode nuevo en una lista
+
+        //.sorted((libro1, libro2) -> Integer.compare(libro2.getFechaPublicacion(), libro1.getFechaPublicacion()))
+
+    }
+
 }

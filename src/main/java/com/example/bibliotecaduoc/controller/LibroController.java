@@ -74,5 +74,20 @@ public class LibroController {
         return libroService.calcularLibrosPorAnio();
     }
     
+    @GetMapping("/mas_antiguo")
+    public Libro obtenerLibroMasAntiguo(){
+        return libroService.getLibroMasAntiguo();
+    }
+    
+    @GetMapping("/mas_nuevo")
+    public Libro obtenerLibroMasNuevo(){
+        return libroService.getLibroMasNuevo();
+    }
+    
+    @GetMapping("/ordenados_por_anio")
+    public List<Libro> getLibrosOrdenadosPorAnio(){
+        return libroService.listarLibrosOrdenadosPorAnio();
+    }
+    
     
 }
