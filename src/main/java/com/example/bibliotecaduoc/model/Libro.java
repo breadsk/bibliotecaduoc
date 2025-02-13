@@ -11,7 +11,7 @@ import lombok.NoArgsConstructor;
  * @Getter
  * @Setter
  * @ToString
- * @EqualsAndHashCode Genera métodos equals y hasjCode que compara los campos
+ * @EqualsAndHashCode Genera métodos equals y hashCode que compara los campos
  * @RequiredArgsConstructor Genera un constructor con los campos finales (final) y los campos marcados con @NonNull
  */
 @AllArgsConstructor //Genera automatica un constructor que incluye todos los campos de la clase como parametros
