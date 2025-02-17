@@ -22,7 +22,7 @@ import org.springframework.web.bind.annotation.RequestParam;
 public class PrestamosController {
 
     private final PrestamoService prestamoService;
-
+    
     public PrestamosController(PrestamoService prestamoService){
         this.prestamoService = prestamoService;
     }
