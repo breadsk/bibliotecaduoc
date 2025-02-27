@@ -30,6 +30,7 @@ public class PrestamosController {
     //Endpoint para obtener todos los préstamos
     @GetMapping("/listar_prestamos")
     public List<Prestamo> getPrestamos(){
+        System.out.println("Estoy en el Controller");
         return prestamoService.getPrestamos();
     }
     
